@@ -1,6 +1,11 @@
 @font-face {
-    font-family: batuphat;
-    src: url("static/batuphat_script/Batuphat Script.otf") format("opentype");
+    font-family: 'Batuphat Script';
+    src: url('fonts/Batuphat-Script.eot');
+    src: url('fonts/Batuphat-Script.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Batuphat-Script.woff2') format('woff2'),
+         url('fonts/Batuphat-Script.woff') format('woff'),
+         url('fonts/Batuphat-Script.ttf')  format('truetype'),
+         url('fonts/Batuphat-Script.svg#Batuphat Script') format('svg');
 }
 
 @body {
