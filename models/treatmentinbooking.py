@@ -1,4 +1,4 @@
-class Treatmentinbooking:
+class Treatinbook:
 
     def __init__(self, booking, treatment, id=None):
         self.booking = booking

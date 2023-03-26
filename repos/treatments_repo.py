@@ -16,3 +16,12 @@ def select_all():
         treatment = Treatment(row['name'], row['duration'], row['description'], row['id'])
         treatments.append(treatment)
     return treatments
+
+def select(id):
+    sql = "SELECT * FROM treatments WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        row = results[0]
+        treatment = Treatment(row['name'], row['duration'], row['description'], row['id'])
+    return treatment

@@ -1,0 +1,8 @@
+@font-face {
+    font-family: batuphat;
+    src: url("static/batuphat_script/Batuphat Script.otf") format("opentype");
+}
+
+@body {
+    background-color: #eeb3d6;
+}

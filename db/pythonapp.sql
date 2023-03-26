@@ -17,6 +17,6 @@ CREATE TABLE bookings (
 
 CREATE TABLE treatments_bookings (
     id SERIAL PRIMARY KEY,
-    treatments_id INT NOT NULL REFERENCES treatments(id) ON DELETE CASCADE,
-    bookings_id INT NOT NULL REFERENCES bookings(id) ON DELETE CASCADE
+    bookings_id INT NOT NULL REFERENCES bookings(id) ON DELETE CASCADE,
+    treatments_id INT NOT NULL REFERENCES treatments(id) ON DELETE CASCADE
 )
