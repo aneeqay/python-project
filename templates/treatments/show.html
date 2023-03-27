@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <ul class="book-treatment">
+            <li><h3>{{ treatment.name }}</h3></li>
+            <li>{{ treatment.description }}</li>
+            <li><h5>{{ treatment.duration }} minutes</h5></li>
+            <li>
+                <form action="/bookings/new"> 
+                    <input style="height:30px; width:10vh" type="submit" value="BOOK">
+                </form>
+            </li>
+        </ul>
+    </div>
+{% endblock content %}

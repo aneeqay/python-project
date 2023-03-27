@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    
+    <article id="confirmation">
+        <p>Yay! We'll see you on {{ booking.date.strftime('%a %d %B %Y') }} at {{ booking.time.strftime('%I:%m %p') }}
+            <br>
+            Selected treatment: {{ booking.treatment.name }}
+            <small>(please allow at least {{ booking.treatment.duration }} minutes for your appointment)</small>
+        </p>
+    </article>
 {% endblock content %}

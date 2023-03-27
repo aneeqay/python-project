@@ -8,4 +8,9 @@ treatments_blueprint = Blueprint("treatments", __name__)
 @treatments_blueprint.route('/treatments')
 def index():
     treatments = treatments_repo.select_all()
-    return render_template('index.html', treatments = treatments)
+    return render_template('treatments/index.html', treatments = treatments)
+
+@treatments_blueprint.route('/treatments/<id>')
+def show(id):
+    treatment = treatments_repo.select(id)
+    return render_template('treatments/show.html', treatment = treatment)
