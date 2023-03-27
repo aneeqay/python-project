@@ -1,13 +1,105 @@
-@font-face {
-    font-family: 'Batuphat Script';
-    src: url('fonts/Batuphat-Script.eot');
-    src: url('fonts/Batuphat-Script.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Batuphat-Script.woff2') format('woff2'),
-         url('fonts/Batuphat-Script.woff') format('woff'),
-         url('fonts/Batuphat-Script.ttf')  format('truetype'),
-         url('fonts/Batuphat-Script.svg#Batuphat Script') format('svg');
+html * {
+    font-family: 'Pattaya', sans-serif;
+    color: #e44935;
 }
 
-@body {
-    background-color: #eeb3d6;
+header {
+    background-color: #e44935;
+    padding: 0;
+    margin: 0;
+    height: 30%;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+header a {
+    color: #eeb3d6;
+    text-decoration: none;
+    font-family: 'Pattaya', sans-serif;
+    text-shadow: -1px 0 #e44935, 0 1px #e44935, 1px 0 #e44935, 0 -1px #e44935, 2px 2px 4px #fff;
+}
+
+header a:hover {
+    text-decoration: none;
+    cursor:pointer;
+}
+
+body {
+    /* background-color: #eeb3d6; */
+    background: rgb(238,179,214);
+    background: radial-gradient(circle, rgba(238,179,214,1) 20%, rgba(255,255,255,1) 175%);
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    bottom: 5;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+ul h3 {
+    color:#e44935;
+}
+
+.menu-button {
+    color: #eeb3d6;
+    text-decoration: none;
+    font-family: 'Pattaya', sans-serif;
+}
+
+.menu-button:hover {
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+}
+
+button {
+    box-shadow: 0px 10px 14px -7px #fff;
+    background:linear-gradient(to bottom, #e44935 60%, #f08478 100%);
+    border: #f08478;
+    background-color: #e44935;
+    border-radius: 8px;
+	display:inline-block;
+	cursor:pointer;
+	padding:13px 32px;
+}
+
+button:hover {
+    background:linear-gradient(to top, #e44935 60%, #f08478 100%);
+    background-color: #e44935;
+}
+
+#home-image {
+    display: block;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+    width: 50%;
+}
+
+footer {
+    font-family: 'Pattaya', sans-serif;
+    text-align: right;
+    margin-right: 5%;
+    position: relative;
+    bottom: 10;
+}
+
+footer a {
+    color: #e44935;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+#treatment-list {
+    display: flex;
+    flex-direction: column;
 }

@@ -7,5 +7,5 @@ treatments_blueprint = Blueprint("treatments", __name__)
 
 @treatments_blueprint.route('/treatments')
 def index():
-    treatments = treatments_repo.select_all
+    treatments = treatments_repo.select_all()
     return render_template('index.html', treatments = treatments)

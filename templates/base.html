@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,16 +13,19 @@
     <title>Treat Me Well</title>
 </head>
 <header>
-   
+   <h1  style="margin:0;">&#10024;<a href="/"> Treat Me Well </a>&#10024;</h1>
 </header>
 <body>
     {% block content %}
         
     {% endblock content %}
-<footer>
     <ul>
-    <li><i class="fa-solid fa-basket-shopping"></i></li>
+        <li><a href="/treatments"><button><h2 class="menu-button">Book Now</h2></button></a></li>
+        <li><a href="/bookings"><button><h2 class="menu-button">My Bookings</h2></button></a></li>
+        <li><a href="/basket"><button><h2 class="menu-button">My Basket</h2></button></a></li>
     </ul>
+<footer>
+    <a href="/about"><h6>treatmewell inc.</h6></a>
 </footer>
 </body>
 </html>
