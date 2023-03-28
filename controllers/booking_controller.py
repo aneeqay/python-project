@@ -7,9 +7,6 @@ from models.booking import Booking
 
 bookings_blueprint = Blueprint("bookings", __name__)
 
-
-
-# read
 @bookings_blueprint.route('/bookings')
 def show_all():
     bookings = bookings_repo.select_all()
@@ -26,7 +23,6 @@ def create_booking():
     my_booking = bookings_repo.select(booking.id)
     return render_template('bookings/confirmation.html', booking = my_booking)
 
-# read
 @bookings_blueprint.route("/bookings/<id>")
 def show_booking(id):
     booking = bookings_repo.select(id)
@@ -54,7 +50,12 @@ def update(id):
     my_booking = bookings_repo.select(id)
     return redirect('bookings/confirmation.html', booking = my_booking)
 
+@bookings_blueprint.route("/bookings/<id>/delete")
+def confirm_delete(id):
+    booking = bookings_repo.select(id)
+    return render_template('bookings/delete.html', booking = booking)
 
 @bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])
 def delete(id):
-    pass
+    bookings_repo.delete(id)
+    return render_template('bookings/deleted.html')

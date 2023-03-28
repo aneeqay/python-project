@@ -9,12 +9,12 @@
         <li>Date: {{ booking.date.strftime('%d-%m-%Y') }}</li>
         <li>Time: {{ booking.time.strftime('%I:%M %p') }}</li>
         <li>Treatment: {{ booking.treatment.name }}</li>
-        <li>More info: {{ booking.treatment.description }}</li>
+        <li>More info: {{ booking.treatment.description }}</li> 
         <li>Please allow at least {{ booking.treatment.duration }} minutes for your appointment.</li>
         <li><form action="/bookings/{{ booking.id }}/edit"> 
             <input style="height:30px; width:10vh" type="submit" value="AMEND">
-        </form></li>
-        <li><form action="/bookings/{{ booking.id }}/delete" method="post"> 
+        </form>
+        <form action="/bookings/{{ booking.id }}/delete" method='GET'> 
             <input style="height:30px; width:10vh" type="submit" value="CANCEL">
         </form></li>
     </ul>

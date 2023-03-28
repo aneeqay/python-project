@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <article id="delete">
+        <h2>Woah!</h2> 
+        <h4>Are you sure you want to cancel booking #{{ booking.id }}?</h4>
+        <form action="/bookings/{{ booking.id }}/delete" method="post"> 
+            <input style="height:30px; width:10vh" type="submit" value="CANCEL">
+        </form>
+        <form action="/bookings"> 
+            <input style="height:30px; width:10vh" type="submit" value="KEEP">
+        </form>
+        </p>
+    </article>
+{% endblock content %}

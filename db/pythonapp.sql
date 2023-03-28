@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS treatments_bookings;
 DROP TABLE IF EXISTS bookings;
 DROP TABLE IF EXISTS treatments;
 
