@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Booking #{{ booking.id }}</h2>
+<p>You're currently booked in for {{ booking.treatment.name }}</p>
+<form action="/bookings/{{ booking.id }}/edit" method="POST">
+<ul>
+    <li><label for="treatments">Change treatment:</label></li>
+    <li><select name="treatments" id="treatments">
+    {% for treatment in treatments %}
+        <option value="{{ treatment.id }}">{{ treatment.name }}</option>
+      {% endfor %}
+        </select></li>
+    <li><label for="date">Change date:</label></li>
+    <li><input type="date" id="date" name="date" value="2023-03-30" min="2023-03-30" max="2023-12-31"></li>
+    <li><label for="appt">Change appointment time:</label></li>
+    <li><input type="time" id="time" name="time" min="10:00" max="16:00"></li>
+    <li><small>We're open 10am - 5pm</small></li>
+    <li><input style="height:30px; width:10vh" type="submit" value="AMEND"></li>
+</ul>
+</form>
+{% endblock content %}

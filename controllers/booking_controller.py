@@ -7,9 +7,7 @@ from models.booking import Booking
 
 bookings_blueprint = Blueprint("bookings", __name__)
 
-# @bookings_blueprint.route('/treatments', methods=['POST'])
-# def add_to_basket():
-#     return
+
 
 # read
 @bookings_blueprint.route('/bookings')
@@ -40,8 +38,21 @@ def new_booking():
     return render_template('bookings/new.html', treatments = treatments)
 
 @bookings_blueprint.route('/bookings/<id>/edit')
-def update(booking):
-    pass
+def amend(id):
+    booking = bookings_repo.select(id)
+    treatments = treatments_repo.select_all()
+    return render_template('bookings/edit.html', booking = booking, treatments = treatments)
+
+@bookings_blueprint.route('/bookings/<id>/edit', methods=['POST'])
+def update(id):
+    date = request.form['date']
+    time = request.form['time']
+    treatment_id = request.form['treatments']
+    treatment = treatments_repo.select(treatment_id)
+    booking = Booking(date, time, treatment, id)
+    bookings_repo.update(booking)
+    my_booking = bookings_repo.select(id)
+    return redirect('bookings/confirmation.html', booking = my_booking)
 
 
 @bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])

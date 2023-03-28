@@ -6,7 +6,7 @@
     {% for booking in bookings %}
     <ul class="booking">
         <li><h3>Booking #{{ booking.id }}</h3></li>
-        <li>Date: {{ booking.date.strftime('%d %m %y') }}</li>
+        <li>Date: {{ booking.date.strftime('%d-%m-%Y') }}</li>
         <li>Time: {{ booking.time.strftime('%I:%M %p') }}</li>
         <li>Treatment: {{ booking.treatment.name }}</li>
         <li>More info: {{ booking.treatment.description }}</li>

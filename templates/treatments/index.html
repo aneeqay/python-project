@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>Our List of Treatments</h2>
-    <ul id="treatment-list">
     {% for treatment in treatments %}
     <ul class="treatment">
         <li><h3>{{ treatment.name }}</h3></li>
@@ -9,22 +8,11 @@
         <li><h5>{{ treatment.duration }} minutes</h5></li>
         <li>
             <form action="/treatments/{{ treatment.id }}"> 
-                <input style="height:30px; width:10vh" type="submit" value="BOOK">
+                <input style="height:30px; width:10vh" type="submit" value="MORE">
             </form>
         </li>
     </ul>
-    <!-- <section class="book">
-        <form action="/" method="post">  -->
-            <!-- <label class="container">One
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-            </label>
-            <input type="checkbox" id="select" name="select" value="SELECT"> -->
-            <!-- <input style="height:30px; width:10vh" type="submit" value="BOOK">
-        </form>
-    </section> -->
-        
     {% endfor %}
-    </ul>
-    <!-- <input style="height:30px; width:10vh" type="submit" value="BOOK"> -->
+
+
 {% endblock content %}
