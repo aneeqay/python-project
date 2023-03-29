@@ -11,5 +11,20 @@
                 </form>
             </li>
         </ul>
+        <h3>{{ treatment.name }} Inspo:</h3>
+        <ul class="'image-gallery">
+            <li> {% if treatment.name == "BASIC B*TCH" %}
+                <img class="treatment-image" src="https://cdn.cliqueinc.com/posts/288177/colourful-nail-art-288177-1594714363749-image.900x0c.jpg?interlace=true&quality=70" style="center">
+                {% endif %} 
+            </li>
+            <li> {% if treatment.name == "BOUJEE" %}
+                <img class="treatment-image" src="https://www.itakeyou.co.uk/idea/wp-content/uploads/2021/04/summer-nail-designs-29.jpg" style="center">
+                {% endif %}
+            </li>
+            <li> {% if treatment.name == "EXTRA AF" %}
+                <img class="treatment-image" src="https://www.fabmood.com/inspiration/wp-content/uploads/2022/04/spring-nails-7.jpg" style="center">
+                {% endif %} 
+            </li>
+        </ul>
     </div>
 {% endblock content %}

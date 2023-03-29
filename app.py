@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 
-from controllers.booking_controller import bookings_blueprint 
-from controllers.treatment_controller import treatments_blueprint 
+from controllers.bookings_controller import bookings_blueprint 
+from controllers.treatments_controller import treatments_blueprint 
 
 
 app = Flask(__name__)

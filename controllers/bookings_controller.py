@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 from flask import Blueprint
 
 import repos.bookings_repo as bookings_repo
@@ -17,11 +17,15 @@ def create_booking():
     date = request.form['date']
     time = request.form['time']
     treatment_id = request.form['treatments']
-    treatment = treatments_repo.select(treatment_id)
-    booking = Booking(date, time, treatment)
-    bookings_repo.save(booking)
-    my_booking = bookings_repo.select(booking.id)
-    return render_template('bookings/confirmation.html', booking = my_booking)
+    existing_booking = bookings_repo.find_booking_by_date_time(date, time)
+    if existing_booking:
+        return render_template('bookings/doublebooked.html', booking = existing_booking)
+    else:
+        treatment = treatments_repo.select(treatment_id)
+        booking = Booking(date, time, treatment)
+        bookings_repo.save(booking)
+        my_booking = bookings_repo.select(booking.id)
+        return render_template('bookings/confirmation.html', booking = my_booking)
 
 @bookings_blueprint.route("/bookings/<id>")
 def show_booking(id):
@@ -48,7 +52,7 @@ def update(id):
     booking = Booking(date, time, treatment, id)
     bookings_repo.update(booking)
     my_booking = bookings_repo.select(id)
-    return redirect('bookings/confirmation.html', booking = my_booking)
+    return render_template('/bookings/confirmation.html', booking = my_booking)
 
 @bookings_blueprint.route("/bookings/<id>/delete")
 def confirm_delete(id):

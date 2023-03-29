@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-    <article id="confirmation">
-        <h2>Yay!</h2> 
-        <h4>We'll see you on {{ booking.date.strftime('%a %d %B %Y') }} at {{ booking.time.strftime('%I:%M %p') }}</h4>
+    <article id="double-booked">
+        <h2>&#10069; Oops&#10083; &#10069;</h2> 
+        <h4>You're already booked in on {{ booking.date.strftime('%a %d %B %Y') }} at {{ booking.time.strftime('%I:%M %p') }}</h4>
         <h4>Selected treatment: {{ booking.treatment.name }}</h4>
         <p><small>(please allow at least {{ booking.treatment.duration }} minutes for your appointment)</small>
         <br>
